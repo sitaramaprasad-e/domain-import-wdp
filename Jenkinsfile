@@ -1,3 +1,4 @@
+def userInput = false
 pipeline {
 
     // Instructs Jenkins to use the buildconductor docker image to run this pipeline
@@ -33,7 +34,6 @@ pipeline {
         }  
          stage("Stage with input") {
     steps {
-        def userInput = false
         script {
             userInput = input(id: 'Proceed1', message: 'Promote build?', parameters: [[$class: 'BooleanParameterDefinition', defaultValue: true, description: '', name: 'Please confirm you agree with this']])
             echo 'userInput: ' + userInput
