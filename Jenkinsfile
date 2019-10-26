@@ -56,7 +56,7 @@ pipeline {
             steps {
                 withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId:'dp-creds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {            
 
-                    sh "/buildconductor/wdp/run-automation.sh deployDomain DTEJQA 10.11.13.69 5550 $USERNAME $PASSWORD sampleDeploymentPolicy" 
+                    sh "/buildconductor/wdp/run-automation.sh deployDomain DTEJQA 10.11.13.69 5550 $USERNAME $PASSWORD" 
                 }
             }
         }
